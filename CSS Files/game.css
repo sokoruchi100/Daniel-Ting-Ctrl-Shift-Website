@@ -1,0 +1,490 @@
+@font-face {
+    font-family: 'Merienda-Regular';
+    src: url('../Fonts/Merienda/Merienda-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Luxurious_Roman-Regular';
+    src: url('../Fonts/Luxurious_Roman/LuxuriousRoman-Regular.ttf');
+}
+
+body {
+    overflow: hidden;
+    margin: 0;
+
+}
+
+main {
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+    display: none;
+}
+#title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: white;
+    font-family: 'Merienda-Regular';
+    font-size: 8vh;
+}
+
+#buttonset {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Merienda-Regular';
+    font-size: 5vh;
+    text-align: center;
+}
+
+#easytext {
+    color: green;
+}
+
+#mediumtext {
+    color: yellow;
+}
+
+#hardtext {
+    color: red;
+}
+
+.button,
+.button-item {
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid white;
+    height: 12vh;
+    width: 12vh;
+    transition: 0.5s;
+}
+
+.button-item:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#easybutton {
+    border: 1px solid green;
+    margin-left: 15vh;
+    margin-right: 15vh;
+}
+#mediumbutton {
+    border: 1px solid yellow;
+    margin-left: 15vh;
+    margin-right: 15vh;
+}
+#hardbutton {
+    border: 1px solid red;
+    margin-left: 15vh;
+    margin-right: 15vh;
+}
+
+#easybutton:hover {
+    background-color: rgba(0, 128, 0, 0.5);
+}
+
+#mediumbutton:hover {
+    background-color: rgba(255, 255, 0, 0.5);
+}
+
+#hardbutton:hover {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+#rps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+
+#rock {
+    margin-top: 15vh;
+}
+
+#paper {
+    margin-bottom: 15vh;
+}
+
+#scissors {
+    margin-top: 15vh;
+}
+
+#top-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+}
+
+#empty-space {
+    width: 19vh;
+}
+
+#rounds {
+    border: .25vh solid white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 3vh;
+    padding-left: 2vh;
+    padding-right: 1vh;
+    margin-left: 2vh;
+}
+
+#points {
+    border: .25vh solid white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 3vh;
+    padding-left: 2vh;
+    padding-right: 1vh;
+}
+
+#you-points {
+    padding-right: 2vh;
+}
+#enemy-points {
+    padding-left: 2vh;
+    padding-right: 1vh;
+    color: green;
+}
+
+#conclusion {
+    position: relative;
+    top: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.conclusiontext {
+    font-size: 6vh;
+    margin: 1vh;
+    color: white;
+    font-family: 'Merienda-Regular';
+}
+
+#victory-container {
+    display: flex;
+    position: relative;
+    top: 15vh;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.victory-item {
+    font-size: 10vh;
+    color: green;
+    font-family: 'Merienda-Regular';
+    margin: 1vh;
+}
+
+#win-container {
+    display: flex;
+    align-items: center;
+}
+
+#next-round {
+    margin: 10vh;
+}
+
+#next-button {
+    position: absolute;
+    font-size: 6vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid white;
+    border-radius: 5vh;
+    cursor: pointer;
+    color: white;
+    font-family: 'Merienda-Regular';
+    padding-left: 2vh;
+    padding-right: 2vh;
+    transition: 0.5s;
+}
+
+#next-button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+}
+
+#end-container {
+    display: flex;
+}
+
+#end-choice-button,
+#exit-button {
+    position: absolute;
+    font-size: 6vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid white;
+    border-radius: 5vh;
+    cursor: pointer;
+    color: white;
+    font-family: 'Merienda-Regular';
+    padding-left: 1vh;
+    padding-right: 1vh;
+    margin-top: 30vh;
+    transition: 0.5s;
+}
+
+#end-choice-button:hover,
+#exit-button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+}
+
+#top-bar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2vh;
+}
+
+.top-bar-item {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: 1px solid white;
+    border-radius: 5vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
+}
+.top-bar-item>span{
+    font-size: 8vh;
+    font-family: 'Luxurious_Roman-Regular';
+}
+
+#timer {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    height: 10vh;
+    width: 10vh;
+    font-size: 8vh;
+    font-family: 'Luxurious_Roman-Regular';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#push {
+    width: 25vh;
+}
+
+.large-div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#next-round {
+    display: none;
+}
+
+#beat-container {
+    margin-top: 15vh;
+}
+
+#beat-container>span {
+    font-size: 6vh;
+    color: white;
+    font-family: 'Merienda-Regular';
+    margin-left: 1vh;
+    margin-right: 1vh;
+}
+
+#beat-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+#out-of-time {
+    margin-top: 15vh;
+    font-size: 6vh;
+    color: white;
+    font-family: 'Merienda-Regular';
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#button-container {
+    margin-top: 0vh;
+}
+
+#winlose-container {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.winlose-text {
+    font-size: 20vh;
+    color: white;
+    font-family: 'Luxurious_Roman-Regular';
+    margin-left: 2vh;
+    margin-right: 2vh;
+    margin-top: 5vh;
+}
+
+#user-points {
+    margin-right:2vh ;
+}
+
+#second-part {
+    display: none;
+}
+
+.cont {
+    display: none;
+    z-index: 1;
+    position: fixed;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 100.5vh;
+    /* the next two lines for just for helping to improve the demonstration */
+    background-color: rgba(255, 255, 255, 0);
+    right: 2%;
+    /*----------------------*/
+}
+
+.item {
+    position: relative;
+    background: rgba(0, 0, 0, 0);
+    height: 1vh;
+    width: 20vh;
+    transition: height 1s;
+
+}
+
+.item:hover {
+    height: 45vh;
+}
+
+#slide {
+    position: absolute;
+    bottom: -40vh;
+    width: 20vh;
+    height: 45vh;
+    background: rgba(0, 0, 0, 0.5);
+    transition: 1s;
+    display: flex;
+    flex-direction: column;
+    border: 0.25vh solid white;
+    border-radius: 1vh;
+}
+
+.item:hover #slide {
+    transition: 1s;
+    bottom: 0;
+}
+
+.arrow-container {
+    display: flex;
+    justify-content: center;
+}
+
+.arrow {
+    width: 4vh;
+    height: 4vh;
+    transition: .5s;
+    box-shadow: -0.25vh 0.25vh 0 rgb(255, 255, 255);
+    transform: rotate(135deg);
+    position: absolute;
+    top: 2vh;
+}
+
+.nav-button {
+    background-color: inherit;
+    color: white;
+    cursor: pointer;
+    height: 10vh;
+    width: 100%;
+    border: none;
+    transition: 0.5s;
+    font-size: 3vh;
+    font-family: 'Merienda-Regular';
+
+}
+
+#main-button {
+    margin-top: 5vh;
+}
+
+.nav-button:hover {
+    background-color: black;
+}
+
+#loading-screen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #1e251e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#title-name {
+    position: absolute;
+    color: rgb(141, 67, 125);
+    font-size: 15vh;
+    top: 1vh;
+    font-family: 'Luxurious_Roman-Regular';
+}
+
+#mouse-text {
+    position: absolute;
+    color: rgb(141, 67, 125);
+    font-size: 5vh;
+    bottom: 20vh;
+    font-family: 'Merienda-Regular';
+}
+
+.mouse {
+    border: 2vh solid #5c745c;
+    border-top: 2vh solid rgb(141, 67, 125);
+    border-radius: 50%;
+    width: 20vh;
+    height: 20vh;
+    animation: spin 2s linear infinite;
+}
+
+.hiding {
+    animation: fadeOut 1s linear;
+    opacity: 0;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}

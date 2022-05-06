@@ -1,0 +1,11 @@
+Model Information:
+* title:	Old City Building
+* source:	https://sketchfab.com/3d-models/old-city-building-079f41aea433477788656b65fdea60a4
+* author:	Steve Morrison (https://sketchfab.com/stevemm)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Old City Building" (https://sketchfab.com/3d-models/old-city-building-079f41aea433477788656b65fdea60a4) by Steve Morrison (https://sketchfab.com/stevemm) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)

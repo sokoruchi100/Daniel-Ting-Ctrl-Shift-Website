@@ -1,0 +1,272 @@
+@font-face {
+    font-family: 'Merienda-Regular';
+    src: url('../Fonts/Merienda/Merienda-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Luxurious_Roman-Regular';
+    src: url('../Fonts/Luxurious_Roman/LuxuriousRoman-Regular.ttf');
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    overflow: hidden;
+    margin: 0;
+    
+}
+
+main{
+    position: absolute;
+    z-index: 0;
+    display: none;
+}
+
+#loading-screen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #1e251e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#title-name {
+    position: absolute;
+    color: rgb(141, 67, 125);
+    font-size: 15vh;
+    top: 1vh;
+    font-family: 'Luxurious_Roman-Regular';
+}
+
+#mouse-text {
+    position: absolute;
+    color: rgb(141, 67, 125);
+    font-size: 5vh;
+    bottom: 20vh;
+    font-family: 'Merienda-Regular';
+}
+
+.mouse {
+    border: 2vh solid #5c745c;
+    border-top: 2vh solid rgb(141, 67, 125);
+    border-radius: 50%;
+    width: 20vh;
+    height: 20vh;
+    animation: spin 2s linear infinite;
+}
+
+.hiding {
+    animation: fadeOut 1s linear;
+    opacity: 0;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.menuContainer {
+    display: inline-block;
+    cursor: pointer;
+    animation: fadeEffect 1s;
+    padding: 1vh;
+    border-bottom: 1px solid rgb(200, 200, 200);
+    border-top: 1px solid rgb(200, 200, 200);
+    border-right: 1px solid rgb(200, 200, 200);
+    background-color: rgba(15, 50, 50, 0.5);;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+#tab {
+    display: block;
+    float: right;
+    border: 1px solid rgb(200, 200, 200);
+    width: 10%;
+    height: fill;
+    overflow: hidden;
+    animation: fadeEffect 1s;
+    position: absolute;
+    top:0;
+    right:0;
+    background-color: rgba(15, 50, 50, 0.5);
+}
+
+.tabButton {
+    display: block;
+    background-color: inherit;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: right;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Luxurious_Roman-Regular';
+    font-size: 1.25em;
+    color:rgb(255, 140, 140);
+}
+
+.tabButton:hover {
+    background-color: rgb(255, 140, 140);
+    color: rgb(15, 50, 50);
+}
+
+.tabButton.active {
+    background-color: rgb(255, 140, 140);
+    color: rgb(15, 50, 50);
+}
+
+.tabContent {
+    max-height: 95vh;
+    overflow-y: auto;
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid rgb(200, 200, 200);
+    width: 25%;
+    border-left: none;
+    display: none;
+    animation: fadeEffect 1s;
+    font-family: 'Merienda-Regular';
+    font-size: 1.5em;
+    background-color: rgba(15, 50, 50, 0.5);
+    color: rgb(255, 140, 140);
+}
+
+.tabHeading {
+    font-family: 'Luxurious_Roman-Regular';
+    font-size: 2em;
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.cont {
+    z-index: -1;
+    position: fixed;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 93.8vh;
+    /* the next two lines for just for helping to improve the demonstration */
+    background-color: rgba(255, 255, 255, 0);
+    width: 98%;
+    /*----------------------*/
+}
+
+.item {
+    position: relative;
+    background: rgba(0, 0, 0, 0);
+    height: 1vh;
+    width: 20vh;
+    transition: height 1s;
+
+}
+
+.item:hover {
+    height: 45vh;
+}
+
+#slide {
+    position: absolute;
+    bottom: -40vh;
+    width: 20vh;
+    height: 45vh;
+    background: rgba(0, 0, 0, 0.5);
+    transition: 1s;
+    display: flex;
+    flex-direction: column;
+    border: 0.25vh solid white;
+    border-radius: 1vh;
+}
+
+.item:hover #slide {
+    transition: 1s;
+    bottom: 0;
+}
+
+.arrow-container {
+    display: flex;
+    justify-content: center;
+}
+
+.arrow {
+    width: 4vh;
+    height: 4vh;
+    transition: .5s;
+    box-shadow: -0.25vh 0.25vh 0 rgb(255, 255, 255);
+    transform: rotate(135deg);
+    position: absolute;
+    top: 2vh;
+}
+
+.button {
+    background-color: inherit;
+    color: white;
+    cursor: pointer;
+    height: 10vh;
+    width: 100%;
+    border: none;
+    transition: 0.5s;
+    font-size: 3vh;
+    font-family: 'Merienda-Regular';
+
+}
+
+#main-button {
+    margin-top: 5vh;
+}
+
+.button:hover {
+    background-color: black;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Daniel Ting">
+        <link rel="stylesheet" href="../CSS Files/style.css">
+        <title>Janken | Home Page</title>
+        <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+    </head>
+    <body>
+        <script type="module" src="../JavaScript Files/main.js"></script>
+        <div id="loading-screen">
+            <div id="title-name">Home Page</div>
+            <div class="mouse">
+            </div>
+            <div id="mouse-text">Scroll the mouse wheel down to move through the website</div>
+        </div>
+        <main>
+            <!-- Opening Section -->
+            <div id="opening-wrapper" class="section">
+                <p id="opening-text">
+                    "What is Janken?" you may ask. Well, Janken is the Japanese name of a game you've probably heard of: Rock Paper
+                    Scissors! This website will guide you through the history of the game, the rules you're familiar with and
+                    unfamiliar with, and a complex version of the game itself.
+                </p>
+                <button id="close-button" onclick="parentNode.remove();">
+                </button>
+            </div>
+            <!-- History Section -->
+            <div id="history-wrapper" class="section">
+                <h2 id="history-title" class="history">The History Of Janken</h2>
+                <p id="history-text"class="history">Click on the button below to learn more about the history of Janken.</p>
+                <form action="../HTML Files/history.html" >
+                    <input class="history" type="submit" value="Click Here" id="history-button"/>
+                </form>
+            </div>
+            <!-- Rules Section -->
+
+            <div id="rules-wrapper" class="section">
+                <h2 id="rules-title" class="rules">How To Play</h2>
+                <p id="rules-text" class="rules">Click on the button below to learn the rules of the game and some secret strategies.</p>
+                <form action="../HTML Files/rules.html">
+                    <input class="rules" type="submit" value="Click Here" id="rules-button"/>
+                </form>
+            </div>
+            <!-- Game Section -->
+            <div id="game-wrapper" class="section">
+                <h2 id="game-title" class="game">Play The Game</h2>
+                <p id="game-text" class="game">Click on the button below to play the game itself.</p>
+                <form action="../HTML Files/game.html">
+                    <input type="submit" value="Click Here" class="game" id="game-button"/>
+                </form>
+            </div>
+
+            <!-- Sources and Models -->
+            <div id="source-wrapper" class="section">
+                <h2 id="source-title" class="source">Sources and Models</h2>
+                <ul id="source-text" class="source">
+                    <li><a href="https://en.wikipedia.org/wiki/Rock_paper_scissors" target="_blank">Wikipedia</a></li>
+                    <li><a href="https://wrpsa.com/" target="_blank">World Rock Paper Scissors Association</a></li>
+                    <li><a href="https://historydaily.org/rock-paper-scissors-ancient-china" target="_blank">History Daily</a></li>
+                    <li><a href="https://www.psychologytoday.com/us/blog/the-blame-game/201504/the-surprising-psychology-rock-paper-scissors" target="_blank">Psychology Today</a></li>
+                    <li><a href="https://sketchfab.com/3d-models/old-city-building-079f41aea433477788656b65fdea60a4" target="_blank">Old City Building</a> by <a href="https://sketchfab.com/stevemm" target="_blank">Steve Morrison</a></li>
+                    <li><a href="https://sketchfab.com/3d-models/the-vast-land-733b802f5a4743ef99ad574279d49920"
+                        target="_blank">The Vast Land</a> by <a href="https://sketchfab.com/shahriyarshahrabi" target="_blank">Shahriar Shahrabi</a></li>
+                    <li><a href="https://sketchfab.com/3d-models/flush-sliding-door-mechanism-ae6a7424569b4e30b09bb18f95728213"
+                        target="_blank">Flush sliding door mechanism</a> by <a href="https://sketchfab.com/cyamahat" target="_blank">C. Yamahata</a></li>
+                    <li><a href="https://sketchfab.com/3d-models/low-poly-japanese-forest-torii-gate-2454c5c1e37941d6904a1ccb1e0ec154" target="_blank">low poly japanese forest torii gate</a> by <a href="https://sketchfab.com/Jesusaponza" target="_blank">Jesus aponza</a></li>
+                    <li><a href="https://sketchfab.com/3d-models/new-york-city-manhattan-372bc495b3a941308f4a3198bc45e17b"
+                        target="_blank">New York City. Manhattan</a> by <a href="https://sketchfab.com/truekit" target="_blank">truekit</a>
+                    </li>
+                    <li><a href="https://sketchfab.com/3d-models/medieval-notice-board-566a4332b57d4045a1cc4ffec77b4b8f" target="_blank">Medieval Notice Board</a> by <a href="https://sketchfab.com/avelium" target="_blank">avelium</a>
+                    </li>
+                    <li><a href="https://sketchfab.com/3d-models/japanese-temple-5917e267ca3e48ac8a27f9ec5809fc29"
+                        target="_blank">Japanese Temple</a> by <a href="https://sketchfab.com/galaxxxy" target="_blank">galaxxxy</a>
+                    </li>
+                    <li> <a href="https://sketchfab.com/3d-models/japanese-tori-gate-11c75832cc91469cb98eccdfc28c6eeb" target="_blank">Japanese Tori Gate</a> by <a href="https://sketchfab.com/jasmineemilycornell" target="_blank">Jasmine</a>
+                    </li>
+                    <li> <a href="https://sketchfab.com/3d-models/detag-cherry-blossom-tree-db1b69851fd449928d36767c4f15502d"
+                            target="_blank">DETAG - Cherry Blossom Tree</a> by <a href="https://sketchfab.com/victormssouza"
+                            target="_blank">Victor Souza</a>
+                    </li>
+                </ul>
+                <p class="source" id="source-me">Programmed and Designed by Daniel Ting</p>
+                <p class="source" id="source-comp">Ctrl + Shift Competition 2022</p>
+            </div>
+                
+
+        </main>
+    </body>
+</html>

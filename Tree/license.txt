@@ -1,0 +1,11 @@
+Model Information:
+* title:	DETAG - Cherry Blossom Tree
+* source:	https://sketchfab.com/3d-models/detag-cherry-blossom-tree-db1b69851fd449928d36767c4f15502d
+* author:	Victor Souza (https://sketchfab.com/victormssouza)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "DETAG - Cherry Blossom Tree" (https://sketchfab.com/3d-models/detag-cherry-blossom-tree-db1b69851fd449928d36767c4f15502d) by Victor Souza (https://sketchfab.com/victormssouza) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

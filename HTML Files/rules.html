@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Daniel Ting">
+        <title>Janken | Rules</title>
+        <link rel="stylesheet" href="../CSS Files/rules.css">
+    </head>
+    <body>
+        <script type="module" src="../JavaScript Files/rules.js"></script>
+        <div id="loading-screen">
+            <div id="title-name">Rules</div>
+            <div class="mouse"></div>
+            <div id="mouse-text">Click on the word "PLAY" to find some secret tips</div>
+        </div>
+        <main>
+            <div id="play-title">HOW TO&nbsp;<strong id="play-word" onclick="change(this.innerText)">PLAY</strong></div>
+            <div id="play">
+                <div id="handsigns-container" class="play-element" onclick="grow(this, this.parentNode)">
+                    <h2 class="handsigns title">Rock, Paper, and Scissors</h2>
+                    <p class="handsigns text">Click on one of the hand signs to choose your hand. These hand signs are Rock(Closed Fist), Paper(Open Palm), and Scissors(Index and Middle Fingers Pointing Out). Once clicked, both your hand and your opponent's hand will be revealed. Your hand is on the left of the conclusion and the opponent's hand is on the right in color. The color is determined by which skill level you are currently on. For example, if it says "Rock Beats Scissors", you had Rock and the opponent had Scissors. To determine who won, simply remember this: Rock beats scissors, scissors beats paper, and paper beats rock.</p>
+                </div>
+                <div id="level-container" class="play-element" onclick="grow(this, this.parentNode)">
+                    <h2 class="level title">Skill Levels</h2>
+                    <p class="level text">The game is split into three skill levels: Beginner, Experienced, and Champion. As the levels progress, the timer gets reduced and the opponent's patterns increase in complexity and randomness. You can tell which difficulty you are currently on by the color of the number on the right of the "POINTS" tab. Green means beginner, yellow means experienced, and red means champion.</p>
+                </div>
+                <div id="timer-container" class="play-element" onclick="grow(this, this.parentNode)">
+                    <h2 class="timer title">Timer</h2>
+                    <p class="timer text">In the top right hand corner of the screen, you will see a timer counting down. This number is 15 on beginner, 10 on experienced, and 5 on champion. You will have less time as the skill level increases, so think quickly. If you run out of time, you will automatically lose the round, so make sure you play a hand.</p>
+                </div>
+                <div id="winning-container" class="play-element" onclick="grow(this, this.parentNode)">
+                    <h2 class="winning title">Winning and Losing</h2>
+                    <p class="winning text">When you beat the opponent in one round, you gain a point which is shown on the left of the "POINTS" tab. If you lose, the opponent gains a point. If you both tie, no one gains a point. In order to win, you must earn 3 points in one game. If the opponent earns 3 points, you lose. Once you lose, you can play again to try to win. If you won the game, you can continue to the higher skill level. Try to beat the game without a single loss.</p>
+                </div>
+            </div>
+            <div id="win">
+                <div id="patterns-container" onclick="grow(this, this.parentNode)" class="win-element">
+                    <h2 class="patterns title">Key Patterns</h2>
+                    <p class="patterns text">The opponents, although appearing random at first, hold many intricate patterns in their decisions. These patterns were based on real life players and their own subconcious patterns. Let's take a look at the beginner level for example. Here, the opponent has a pretty basic pattern. If the opponent wins a round, it will stick with that hand for the next round. For example, if the opponent wins with rock, it will play rock on the next round. If the opponent loses the round, it will move on to the next hand in the rock-paper-scissors fashion. For example, if the opponent plays rock and loses, it will then play paper.</p>
+                </div>
+                <div id="predictions-container" onclick="grow(this, this.parentNode)" class="win-element">
+                    <h2 class="predictions title">Predicting Your Opponent</h2>
+                    <p class="predictions text">With this key information, you can thus predict what your opponent is going to throw. If your opponent won the last round with scissors, what should you throw for this round? If your answer was rock, then you are correct! Because the opponent is inclined to throw the same winning hand again, you should take advantage of that weakness and throw the hand that will beat your opponent's. More experienced players know this as well, so they will also try to predict your moves as well.</p>
+                </div>
+                <div id="statistics-container" onclick="grow(this, this.parentNode)" class="win-element">
+                    <h2 class="statistics title">Statistics</h2>
+                    <p class="statistics text">You would think that there is 1/3 chance of throwing either rock, paper, or scissors, but that wouldn't be exactly the case. Studies have reported that rock and scissors actually have a higher chance of being thrown than paper.(Rock 35%, Scissors 35%, Paper 30%). When you encounter a tie, it might be best to go for paper or rock.</p>
+                </div>
+                <div id="first-container" onclick="grow(this, this.parentNode)" class="win-element">
+                    <h2 class="first title">Your First Move</h2>
+                    <p class="first text">Most people choose rock as their first move since it is the easiest to throw. More experienced players know this fact, which is why they are more likely to throw paper. Those who are fighting against seasoned players might even go for scissors to beat those who first throw paper.</p>
+                </div>
+            </div>
+            <div class="cont">
+                <div class="item">
+                    <div id="slide">
+                        <div class="arrow-container">
+                        <div class="arrow"></div>
+                        </div>
+                        <form action="../HTML Files/index.html">
+                            <input type="submit" value="Main Page" class="button" id="main-button" />
+                        </form>
+                        <form action="../HTML Files/history.html">
+                            <input type="submit" value="History" class="button" id="history-button" />
+                        </form>
+                        <form action="../HTML Files/rules.html">
+                            <input type="submit" value="Rules" class="button" id="rules-button" />
+                        </form>
+                        <form action="../HTML Files/game.html">
+                            <input type="submit" value="Game" class="button" id="game-button" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <script src="../JavaScript Files/sizeChange.js"></script>
+        </main>
+    </body>
+</html>

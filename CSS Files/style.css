@@ -1,0 +1,352 @@
+@font-face {
+    font-family: 'Merienda-Regular';
+    src: url('../Fonts/Merienda/Merienda-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Luxurious_Roman-Regular';
+    src: url('../Fonts/Luxurious_Roman/LuxuriousRoman-Regular.ttf');
+}
+
+html {
+    overflow: hidden;
+    overflow-x: hidden
+    
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+#historyButton, #rulesButton, #gameButton {
+    background-color: #40C173;
+    color: #FA99B8;
+    border-radius:12px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2px;
+    padding: 1px;
+    margin: 0;
+    opacity: 0.8;
+}
+
+#historyButton:hover {
+    background-color: #FA99B8;
+    color: #40C173;
+}
+
+#Cube {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    color: pink;
+    top: 10px;
+
+    font-size: 1px;
+    width: 20px;
+    border: 1px solid darkgreen;
+    padding: 1px;
+
+}
+
+#loading-screen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #1e251e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mouse {
+    width: 12vh;
+    height: 23vh;
+    border: 0.5vh solid rgb(141, 67, 125);
+    border-radius: 7vh;
+}
+.mouse::before {
+    content: "";
+    width: 3vh;
+    height: 3vh;
+    position: absolute;
+    background: rgb(141, 67, 125);
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    top: 40vh;
+    opacity: 1;
+    animation: mouse 2s infinite;
+}
+
+.hiding {
+    animation: fadeOut 1s linear;
+    opacity: 0;
+}
+/*animation: mouse 2s infinite;*/
+@keyframes mouse {
+    from {
+        opacity: 1;
+        top: 40vh;
+    }
+    to {
+        opacity: 0;
+        top: 50vh;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#title-name {
+    position: absolute;
+    color: rgb(141, 67, 125);
+    font-size: 15vh;
+    top: 1vh;
+}
+
+#mouse-text {
+    position: absolute;
+    color: rgb(141, 67, 125);
+    font-size: 5vh;
+    bottom: 20vh;
+}
+
+#opening-wrapper {
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 200vh;
+    height: 120vh;
+}
+
+#opening-text {
+    color: white;
+    background-color: rgba(0,0,0, 0.5);
+    font-size: 5vh;
+    padding: 2vh;
+    font-family: 'Merienda-Regular';
+    width: 100vh;
+    height: 60vh;
+    border-radius: 8vh;
+    border: .25vh solid white;
+}
+
+#close-button {
+    display: flex;
+    position: absolute;
+    opacity: 0.5;
+    top: 30vh;
+    height: 6vh;
+    width: 6vh;
+    right: 51vh;
+    border: 0px;
+    background: rgba(51, 51, 51, 0);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+#close-button:hover {
+    opacity: 1;
+}
+
+#close-button:before, #close-button:after {
+    position: absolute;
+    content: ' ';
+    height: 8vh;
+    width: .5vh;
+    background-color: rgb(255, 255, 255);
+}
+
+#close-button:before {
+    transform: rotate(45deg);
+}
+
+#close-button:after {
+    transform: rotate(-45deg);
+}
+
+#history-wrapper {
+    position: absolute;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vh;
+}
+
+#history-title {
+    font-size: 10vh;
+    font-family: 'Luxurious_Roman-Regular';
+}
+
+.history {
+    background-color: rgba(0,0,0, 0.5);
+    color: white;
+    display: block;
+}
+
+#history-text {
+    font-size: 5vh;
+    font-family: 'Merienda-Regular';
+}
+
+#history-button {
+    height: 7vh;
+    width: 23vh;
+    font-size: 4vh;
+    background-color: rgba(0, 0, 0, 0);
+    border: .25vh solid black;
+    cursor: pointer;
+    transition: 0.5s;
+    font-family: 'Merienda-Regular';
+}
+
+#history-button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#rules-wrapper {
+    position: absolute;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    width: 100%;
+}
+
+#rules-title {
+    font-size: 10vh;
+    font-family: 'Luxurious_Roman-Regular';
+}
+
+.rules {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+#rules-text {
+    font-size: 5vh;
+    font-family: 'Merienda-Regular';
+}
+
+#rules-button {
+    height: 7vh;
+    width: 23vh;
+    font-size: 4vh;
+    background-color: rgba(0, 0, 0, 0);
+    border: .25vh solid black;
+    cursor: pointer;
+    transition: 0.5s;
+    font-family: 'Merienda-Regular';
+}
+
+#rules-button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#game-wrapper {
+    position: absolute;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vh;
+}
+
+#game-title {
+    font-size: 10vh;
+    font-family: 'Luxurious_Roman-Regular';
+}
+
+.game {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: block;
+}
+
+#game-text {
+    font-size: 5vh;
+    font-family: 'Merienda-Regular';
+}
+
+#game-button {
+    height: 7vh;
+    width: 23vh;
+    font-size: 4vh;
+    background-color: rgba(0, 0, 0, 0);
+    border: .25vh solid black;
+    cursor: pointer;
+    transition: 0.5s;
+    font-family: 'Merienda-Regular';
+}
+
+#game-button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#source-wrapper {
+    position: absolute;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vh;
+}
+
+#source-title {
+    font-size: 10vh;
+    font-family: 'Luxurious_Roman-Regular';
+}
+
+.source {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: block;
+}
+
+#source-text {
+    font-size: 2vh;
+    font-family: 'Merienda-Regular';
+}
+
+#source-me,
+#source-comp {
+    font-size: 4vh;
+    font-family: 'Merienda-Regular';
+}
+
+#mouse-text {
+    font-family: 'Merienda-Regular';
+}
+
+#title-name {
+    font-family: 'Luxurious_Roman-Regular';
+}

@@ -1,0 +1,272 @@
+@font-face {
+    font-family: 'Merienda-Regular';
+    src: url('../Fonts/Merienda/Merienda-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Luxurious_Roman-Regular';
+    src: url('../Fonts/Luxurious_Roman/LuxuriousRoman-Regular.ttf');
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    overflow: hidden;
+    margin: 0;
+
+}
+
+main {
+    z-index: 0;
+    position: absolute;
+    display: none;
+}
+
+.cont {
+    z-index: -1;
+    position: fixed;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 100.5vh;
+    /* the next two lines for just for helping to improve the demonstration */
+    background-color: rgba(255, 255, 255, 0);
+    width: 98%;
+    /*----------------------*/
+}
+
+.item {
+    position: relative;
+    background: rgba(0, 0, 0, 0);
+    height: 1vh;
+    width: 20vh;
+    transition: height 1s;
+    
+}
+
+.item:hover {
+    height: 45vh;
+}
+
+#slide {
+    position: absolute;
+    bottom: -40vh;
+    width: 20vh;
+    height: 45vh;
+    background: rgba(0, 0, 0, 0.5);
+    transition: 1s;
+    display: flex;
+    flex-direction: column;
+    border: 0.25vh solid white;
+    border-radius: 1vh;
+}
+
+.item:hover #slide {
+    transition: 1s;
+    bottom: 0;
+}
+
+.arrow-container {
+    display: flex;
+    justify-content: center;
+}
+
+.arrow {
+    width: 4vh;
+    height: 4vh;
+    transition: .5s;
+    box-shadow: -0.25vh 0.25vh 0 rgb(255, 255, 255);
+    transform: rotate(135deg);
+    position: absolute;
+    top: 2vh;
+}
+
+.button {
+    background-color: inherit;
+    color: white;
+    cursor: pointer;
+    height: 10vh;
+    width: 100%;
+    border: none;
+    transition: 0.5s;
+    font-size: 3vh;
+    font-family: 'Merienda-Regular';
+    
+}
+
+#main-button {
+    margin-top: 5vh;
+}
+
+.button:hover {
+    background-color: black;
+}
+
+#play-title {
+    position: absolute;
+    display: flex;
+    width: 205vh;
+    height: 15vh;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    color: rgb(240, 173, 173);
+    font-size: 15vh;
+    font-family: 'Luxurious_Roman-Regular';
+}
+
+#play-word {
+    color: rgb(87, 212, 87);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+#play-word:hover {
+    color: red;
+}
+
+#play,
+#win {
+    position: fixed;
+    display: flex;
+    height: 50vh;
+    width: 90vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    left: 58vh;
+    top: 18vh;
+}
+
+#handsigns-container,
+#level-container,
+#timer-container,
+#winning-container,
+#patterns-container,
+#predictions-container,
+#statistics-container,
+#first-container {
+    display: flex;
+    justify-content: center;
+    height: 33vh;
+    width: 43vh;
+    background-color: rgba(46, 27, 9, 0.75);
+    flex-direction: column;
+    border-radius: 2vh;
+    border: 0.25vh outset black;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+#handsigns-container:hover,
+#level-container:hover,
+#timer-container:hover,
+#winning-container:hover,
+#patterns-container:hover,
+#predictions-container:hover,
+#statistics-container:hover,
+#first-container:hover {
+    border: .5vh solid white;
+    background-color: rgba(46, 27, 9, 1);
+}
+
+.handsigns,
+.level,
+.timer,
+.winning,
+.patterns,
+.predictions,
+.statistics,
+.first {
+    color: rgb(240, 173, 173);
+}
+
+.title {
+    transition: 0.5s;
+    margin: 0vh;
+    font-size: 3.5vh;
+    font-family: 'Luxurious_Roman-Regular';
+    align-self: center;
+}
+
+.text {
+    transition: 0.5s;
+    font-size: 1.5vh;
+    font-family: 'Merienda-Regular';
+}
+
+.grow {
+    width: 87vh;
+    height: 66vh;
+}
+
+.grow-title {
+    font-size: 7vh;
+}
+
+.grow-text {
+    font-size: 3vh;
+}
+
+#loading-screen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #1e251e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#title-name {
+    position: absolute;
+    color: rgb(141, 67, 125);
+    font-size: 15vh;
+    top: 1vh;
+    font-family: 'Luxurious_Roman-Regular';
+}
+
+#mouse-text {
+    position: absolute;
+    color: rgb(141, 67, 125);
+    font-size: 5vh;
+    bottom: 20vh;
+    font-family: 'Merienda-Regular';
+}
+
+.mouse {
+    border: 2vh solid #5c745c;
+    border-top: 2vh solid rgb(141, 67, 125);
+    border-radius: 50%;
+    width: 20vh;
+    height: 20vh;
+    animation: spin 2s linear infinite;
+}
+
+.hiding {
+    animation: fadeOut 1s linear;
+    opacity: 0;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}

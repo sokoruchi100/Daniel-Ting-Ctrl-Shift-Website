@@ -1,0 +1,11 @@
+Model Information:
+* title:	Medieval Notice Board
+* source:	https://sketchfab.com/3d-models/medieval-notice-board-566a4332b57d4045a1cc4ffec77b4b8f
+* author:	avelium (https://sketchfab.com/avelium)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Medieval Notice Board" (https://sketchfab.com/3d-models/medieval-notice-board-566a4332b57d4045a1cc4ffec77b4b8f) by avelium (https://sketchfab.com/avelium) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

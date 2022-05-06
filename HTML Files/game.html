@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Daniel Ting">
+        <title>Janken | Game</title>
+        <link rel="stylesheet" href="../CSS Files/game.css">
+    </head>
+    <body>
+        
+        <script type="module" src="../JavaScript Files/game.js"></script>
+        <script src="../JavaScript Files/remove.js"></script>
+        <script src="../JavaScript Files/beginner.js"></script>
+        <div id="loading-screen">
+            <div id="title-name">Game</div>
+            <div class="mouse"></div>
+            <div id="mouse-text">Can you beat the game without a single loss?</div>
+        </div>
+        <main>
+            <div id="title">
+                <h1>
+                    CHOOSE YOUR LEVEL
+                </h1>
+            </div>
+            <div id="buttonset">
+                <div class="buttondiv">
+                    <h2 id="easytext">Beginner</h2>
+                    <button id="easybutton" class="button" onclick="remove(); hide(); timerFunction('e', 15);">
+                        <img src="../Image Library/RockIcon.png" alt="">
+                    </button>
+                </div>
+                <div class="buttondiv">
+                    <h2 id="mediumtext">Experienced</h2>
+                    <button id="mediumbutton" class="button" onclick="remove(); hide(); timerFunction('m', 10);">
+                        <img src="../Image Library/PaperIcon.png" alt="">
+                    </button>
+                </div>
+                <div class="buttondiv">
+                    <h2 id="hardtext">Champion</h2>
+                    <button id="hardbutton" class="button" onclick="remove(); hide(); timerFunction('h', 5);">
+                        <img src="../Image Library/ScissorsIcon.png" alt="">
+                    </button>
+                </div>
+            </div>
+            <div id="second-part">
+                <div id="top-bar">
+                    <span class="top-bar-item">
+                        <span>
+                            Round
+                        </span>
+                        <span id="round-counter">
+                            1
+                        </span>
+                    </span>
+                    <span></span>
+                    <span class="top-bar-item">
+                        <span id="user-points">
+                            0
+                        </span>
+                        <span>
+                            Points
+                        </span>
+                        <span id="opponent-points">
+                            0
+                        </span>
+                    </span>
+                    <span id="push"></span>
+                    <span id="timer">
+                        <span >
+                            15
+                        </span>
+                    </span>
+                </div>
+                <div class="large-div" id="out-of-time">
+                    You ran out of time
+                </div>
+                <div class="large-div" id="beat-container">
+                    <span class="beat-text" id="user">Paper</span>
+                    <span class="beat-text" id="mid-text">Beats</span>
+                    <span class="beat-text" id="opponent">Rock</span>
+                </div>
+                <div class="large-div" id="winlose-container">
+                    <span class="winlose-text">You</span>
+                    <span class="winlose-text" id="win-lose">Win</span>
+                </div>
+                <div class="large-div" id="next-round">
+                    <button id="next-button" onclick="next()">Next Round</button>
+                </div>
+                <div class="large-div" id="end-choice">
+                    <button id="end-choice-button" onclick="again()">Play Again</button>
+                    <button id="exit-button" onclick="nextLevel()">Go To The Next Level</button>
+                </div>
+                <script src="../JavaScript Files/compare.js"></script>
+                <div id="button-container" class="large-div">
+                    <button class="button-item" id="rock" onclick="compare('r', opponent());">
+                        <img src="../Image Library/RockIcon.png" alt="">
+                    </button>
+                    <button class="button-item" id="paper" onclick="compare('p', opponent());">
+                        <img src="../Image Library/PaperIcon.png" alt="">
+                    </button>
+                    <button class="button-item" id="scissors" onclick="compare('s', opponent());">
+                        <img src="../Image Library/ScissorsIcon.png" alt="">
+                    </button>
+                </div>
+            </div>
+        </main>
+        <div class="cont">
+            <div class="item">
+                <div id="slide">
+                    <div class="arrow-container">
+                        <div class="arrow"></div>
+                    </div>
+                    <form action="../HTML Files/index.html">
+                        <input type="submit" value="Main Page" class="nav-button" id="main-button" />
+                    </form>
+                    <form action="../HTML Files/history.html">
+                        <input type="submit" value="History" class="nav-button" id="history-button" />
+                    </form>
+                    <form action="../HTML Files/rules.html">
+                        <input type="submit" value="Rules" class="nav-button" id="rules-button" />
+                    </form>
+                    <form action="../HTML Files/game.html">
+                        <input type="submit" value="Game" class="nav-button" id="game-button" />
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="../JavaScript Files/cleaner.js"></script>
+    </body>
+</html>
+
