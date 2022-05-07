@@ -145,7 +145,7 @@ manager.onLoad = function ( ) {
 //TEXT GEOMETRY LOADER
 const loader = new FontLoader();
 const text = "JANKEN!";
-loader.load("../Fonts/Merienda One_Regular.json", function(font) {
+loader.load("./Fonts/Merienda One_Regular.json", function(font) {
     const textGeometry = new TextGeometry(text, {
         font: font,
         size: 6,
@@ -177,7 +177,7 @@ gltfLoader.load( "./Tori Gate/scene.gltf", function ( gltf ) {
 
 } );
 
-gltfLoader.load( "../Notice Board/scene.gltf", function ( gltf ) {
+gltfLoader.load( "./Notice Board/scene.gltf", function ( gltf ) {
 
 	scene.add( gltf.scene );
     gltf.scene.position.set(-15,0,-175);
@@ -191,7 +191,7 @@ gltfLoader.load( "../Notice Board/scene.gltf", function ( gltf ) {
 
 } );
 
-gltfLoader.load( "../Temple/scene.gltf", function ( gltf ) {
+gltfLoader.load( "./Temple/scene.gltf", function ( gltf ) {
 
 	scene.add( gltf.scene );
     gltf.scene.scale.set(.12,.12,.12);
@@ -204,7 +204,7 @@ gltfLoader.load( "../Temple/scene.gltf", function ( gltf ) {
 
 } );
 
-gltfLoader.load( "../Tree/scene.gltf", function ( gltf ) {
+gltfLoader.load( "./Tree/scene.gltf", function ( gltf ) {
 
 	scene.add( gltf.scene );
     gltf.scene.position.set(-20,0,-450);
