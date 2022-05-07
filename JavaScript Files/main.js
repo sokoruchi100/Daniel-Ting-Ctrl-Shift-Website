@@ -165,7 +165,7 @@ loader.load("../Fonts/Merienda One_Regular.json", function(font) {
 //IMPORTING MODELS
 const gltfLoader = new GLTFLoader(manager);
 
-gltfLoader.load( "../Tori Gate/scene.gltf", function ( gltf ) {
+gltfLoader.load( "./Tori Gate/scene.gltf", function ( gltf ) {
 
 	scene.add( gltf.scene );
     gltf.scene.position.set(0,25,-100);
