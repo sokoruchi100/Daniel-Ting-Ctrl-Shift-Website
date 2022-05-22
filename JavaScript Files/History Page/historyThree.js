@@ -1,14 +1,12 @@
-import * as THREE from "./three.module.js";
-import {TextGeometry} from "./TextGeometry.js";
-import { FontLoader} from "./FontLoader.js";
-import WebGL from "./WebGL.js";
-import {GLTFLoader} from "./GLTFLoader.js"
-import {OrbitControls} from "./OrbitControls.js"
+import * as THREE from "../Threejs Folder/three.module.js";
+import WebGL from "../Threejs Folder/WebGL.js";
+import {GLTFLoader} from "../Threejs Folder/GLTFLoader.js"
 
 //SCENE
 const scene = new THREE.Scene();
 
 //TEXTURE LOADER
+//These load in the background images
 const forestTexture = new THREE.TextureLoader().load("../Image Library/Forest.jpg");
 const oldCityTexture = new THREE.TextureLoader().load("../Image Library/Old City.jpg");
 const blueSkyTexture = new THREE.TextureLoader().load("../Image Library/BlueSky.jpg");
@@ -19,7 +17,7 @@ const main = document.getElementsByTagName('main');
 
 //CAMERA
 const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 10000);
-
+//Setting initial position and rotation
 camera.position.set(-16.47,2.88,-3.67);
 camera.rotation.set(-2.52, -1.22, -2.55);
 
@@ -29,6 +27,7 @@ const AL = new THREE.AmbientLight(0xffffff, 0.5);
 scene.add(DL, AL);
 
 //CHANGING SCENE
+//This function takes the input from the button clicks and checks if it matches with either of these cases. Once it finds the matching case, the camera and rotation and lighting will change to the given scene.
 function backgroundChanger(section){
     switch(section) {
         case 'origins':
@@ -76,20 +75,21 @@ document.body.appendChild(renderer.domElement);
 
 //LOADING SCREEN
 const manager = new THREE.LoadingManager();
-
+//checks if all models are done loading
 manager.onLoad = function ( ) {
 //Waits 3 seconds before closes the loading screen
     function decrement() {
         let i = 3;
         function count() {
             if (i == -1) {
+                //hides the loading screen
                 clearInterval(counting);
                 loadingScreen.classList.add("hiding");
                 main[0].style.display = 'block';
             } else {
                 i--;
             } 
-        }
+        }// counts in real time
         const counting = setInterval(count, 1000);
         count();
     }
@@ -98,8 +98,8 @@ manager.onLoad = function ( ) {
 
 //IMPORTING MODELS
 const gltfLoader = new GLTFLoader(manager);
-
-gltfLoader.load( "../Chinese Mountains/scene.gltf", function ( gltf ) {
+//This loads in the 4 models and resizes/rotates/positions them in the entire scene. They are actually stacked ontop of each other
+gltfLoader.load( "../Models/Chinese Mountains/scene.gltf", function ( gltf ) {
 
 	scene.add( gltf.scene );
     gltf.scene.position.set(0,0,0)
@@ -118,7 +118,7 @@ gltfLoader.load( "../Chinese Mountains/scene.gltf", function ( gltf ) {
 
 } );
 
-gltfLoader.load( "../Japanese Forest/scene.gltf", function ( gltf ) {
+gltfLoader.load( "../Models/Japanese Forest/scene.gltf", function ( gltf ) {
 
 	scene.add( gltf.scene );
     gltf.scene.position.set(0,300,0)
@@ -137,7 +137,7 @@ gltfLoader.load( "../Japanese Forest/scene.gltf", function ( gltf ) {
 
 } );
 
-gltfLoader.load( "../Building/scene.gltf", function ( gltf ) {
+gltfLoader.load( "../Models/Building/scene.gltf", function ( gltf ) {
 
 	scene.add( gltf.scene );
     gltf.scene.position.set(0,600,0)
@@ -156,7 +156,7 @@ gltfLoader.load( "../Building/scene.gltf", function ( gltf ) {
 
 } );
 
-gltfLoader.load( "../Modern City/scene.gltf", function ( gltf ) {
+gltfLoader.load( "../Models/Modern City/scene.gltf", function ( gltf ) {
 
 	scene.add( gltf.scene );
     gltf.scene.position.set(0,900,0)
@@ -176,6 +176,7 @@ gltfLoader.load( "../Modern City/scene.gltf", function ( gltf ) {
 } );
 
 //RESIZING
+//Changes the rendered 3D scene to match the window output if minimized
 window.addEventListener('resize', onWindowResize, false);
 
 function onWindowResize() {
@@ -184,9 +185,8 @@ function onWindowResize() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-//controls.update();
-
 //ANIMATION
+//Renders the scene
 function animate() {
     requestAnimationFrame(animate);
 
@@ -195,6 +195,7 @@ function animate() {
 }
 
 //WEBGL CHECKER
+//checks if the user has webgl in their device
 if ( WebGL.isWebGLAvailable() ) {
 
 	// Initiate function or other initializations here

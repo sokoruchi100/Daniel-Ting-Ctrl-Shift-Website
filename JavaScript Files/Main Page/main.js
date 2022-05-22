@@ -1,21 +1,21 @@
-import * as THREE from "./three.module.js";
-import {TextGeometry} from "./TextGeometry.js";
-import { FontLoader} from "./FontLoader.js";
-import WebGL from "./WebGL.js";
-import { CSS3DObject, CSS3DRenderer } from "./CSS3DRenderer.js"
-import {GLTFLoader} from "./GLTFLoader.js"
+import * as THREE from "../Threejs Folder/three.module.js";
+import {TextGeometry} from "../Threejs Folder/TextGeometry.js";
+import { FontLoader} from "../Threejs Folder/FontLoader.js";
+import WebGL from "../Threejs Folder/WebGL.js";
+import {GLTFLoader} from "../Threejs Folder/GLTFLoader.js"
 
 //Text Elements
 const sections = document.getElementsByClassName('section');
 for (let i = 0; i < sections.length; i++) {
     sections[i].style.display = "none";
 }
-const openingWrapper = document.getElementById('opening-wrapper');
+const openingAlert = document.getElementById('opening-alert');
 const historyWrapper = document.getElementById('history-wrapper');
 const rulesWrapper = document.getElementById('rules-wrapper');
 const gameWrapper = document.getElementById('game-wrapper');
 const sourceWrapper = document.getElementById('source-wrapper');
 const closeButton = document.getElementById('close-button');
+const main = document.getElementsByTagName('main');
 //SCENE
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xBBF597);
@@ -23,6 +23,7 @@ scene.background = new THREE.Color(0xBBF597);
 //CAMERA
 const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 750);
 camera.position.set(0,15,25);
+
 
 //RENDERER
 const renderer = new THREE.WebGLRenderer({antialias: true});
@@ -126,10 +127,31 @@ manager.onLoad = function ( ) {
             if (i == -1) {
                 clearInterval(counting);
                 loadingScreen.classList.add("hiding");
-                openingWrapper.style.display = "flex";
-                openingWrapper.style.animation = "fadeIn 2s Linear";
+                main[0].style.display = 'flex';
+                openingAlert.style.visibility = "visible";
                 closeButton.addEventListener('click', function handleClick() {
                     window.addEventListener('wheel', onMouseWheel, false);
+                    function positionChanger(section){
+                        switch(section) {
+                            case 'title':
+                                camera.position.set(0,15, 25);
+                                break;
+                            case 'history':
+                                camera.position.set(0,15,-30);
+                                break;
+                            case 'rules':
+                                camera.position.set(0,15,-105);
+                                break;
+                            case 'game':
+                                camera.position.set(0,15,-230);
+                                break;
+                            case 'sources':
+                                camera.position.set(0,15,-355);
+                                break;
+                        }
+                    }
+                //makes the script work as a module file (VERY IMPORTANT)
+                window.positionChanger = positionChanger;
                 });
             } else {
                 i--;
@@ -165,7 +187,7 @@ loader.load("./Fonts/Merienda One_Regular.json", function(font) {
 //IMPORTING MODELS
 const gltfLoader = new GLTFLoader(manager);
 
-gltfLoader.load( "./Tori Gate/scene.gltf", function ( gltf ) {
+gltfLoader.load( "./Models/Tori Gate/scene.gltf", function ( gltf ) {
 
 	scene.add( gltf.scene );
     gltf.scene.position.set(0,25,-100);
@@ -177,7 +199,7 @@ gltfLoader.load( "./Tori Gate/scene.gltf", function ( gltf ) {
 
 } );
 
-gltfLoader.load( "./Notice Board/scene.gltf", function ( gltf ) {
+gltfLoader.load( "./Models/Notice Board/scene.gltf", function ( gltf ) {
 
 	scene.add( gltf.scene );
     gltf.scene.position.set(-15,0,-175);
@@ -191,7 +213,7 @@ gltfLoader.load( "./Notice Board/scene.gltf", function ( gltf ) {
 
 } );
 
-gltfLoader.load( "./Temple/scene.gltf", function ( gltf ) {
+gltfLoader.load( "./Models/Temple/scene.gltf", function ( gltf ) {
 
 	scene.add( gltf.scene );
     gltf.scene.scale.set(.12,.12,.12);
@@ -204,7 +226,7 @@ gltfLoader.load( "./Temple/scene.gltf", function ( gltf ) {
 
 } );
 
-gltfLoader.load( "./Tree/scene.gltf", function ( gltf ) {
+gltfLoader.load( "./Models/Tree/scene.gltf", function ( gltf ) {
 
 	scene.add( gltf.scene );
     gltf.scene.position.set(-20,0,-450);
@@ -225,32 +247,34 @@ function onWindowResize() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
+
+
 //ANIMATION
 function animate() {
     requestAnimationFrame(animate);
     
     if (camera.position.z < -25 && camera.position.z > -80) {
-        historyWrapper.style.display = "flex";
+        historyWrapper.style.visibility = "visible";
     } else {
-        historyWrapper.style.display = "none";
+        historyWrapper.style.visibility = "hidden";
     }
 
     if (camera.position.z < -100 && camera.position.z > -175) {
-        rulesWrapper.style.display = "flex";
+        rulesWrapper.style.visibility = "visible";
     } else {
-        rulesWrapper.style.display = "none";
+        rulesWrapper.style.visibility = "hidden";
     }
 
     if (camera.position.z < -225 && camera.position.z > -300) {
-        gameWrapper.style.display = "flex";
+        gameWrapper.style.visibility = "visible";
     } else {
-        gameWrapper.style.display = "none";
+        gameWrapper.style.visibility = "hidden";
     }
 
     if (camera.position.z < -350) {
-        sourceWrapper.style.display = "flex";
+        sourceWrapper.style.visibility = "visible";
     } else {
-        sourceWrapper.style.display = "none";
+        sourceWrapper.style.visibility = "hidden";
     }
     renderer.render(scene, camera);
     

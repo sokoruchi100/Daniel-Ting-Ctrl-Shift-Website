@@ -8,14 +8,10 @@
     src: url('../Fonts/Luxurious_Roman/LuxuriousRoman-Regular.ttf');
 }
 
-* {
-    box-sizing: border-box
-}
 
 body {
     overflow: hidden;
     margin: 0;
-    
 }
 
 main{
@@ -191,82 +187,86 @@ main{
     }
 }
 
-.cont {
-    z-index: -1;
-    position: fixed;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    height: 93.8vh;
-    /* the next two lines for just for helping to improve the demonstration */
-    background-color: rgba(255, 255, 255, 0);
-    width: 98%;
-    /*----------------------*/
-}
-
-.item {
-    position: relative;
-    background: rgba(0, 0, 0, 0);
-    height: 1vh;
-    width: 20vh;
-    transition: height 1s;
-
-}
-
-.item:hover {
-    height: 45vh;
-}
-
-#slide {
-    position: absolute;
-    bottom: -40vh;
-    width: 20vh;
-    height: 45vh;
-    background: rgba(0, 0, 0, 0.5);
-    transition: 1s;
-    display: flex;
-    flex-direction: column;
-    border: 0.25vh solid white;
-    border-radius: 1vh;
-}
-
-.item:hover #slide {
-    transition: 1s;
-    bottom: 0;
-}
-
-.arrow-container {
-    display: flex;
-    justify-content: center;
-}
-
-.arrow {
-    width: 4vh;
-    height: 4vh;
-    transition: .5s;
-    box-shadow: -0.25vh 0.25vh 0 rgb(255, 255, 255);
-    transform: rotate(135deg);
-    position: absolute;
-    top: 2vh;
-}
-
-.button {
-    background-color: inherit;
-    color: white;
-    cursor: pointer;
-    height: 10vh;
-    width: 100%;
-    border: none;
-    transition: 0.5s;
-    font-size: 3vh;
-    font-family: 'Merienda-Regular';
-
-}
-
 #main-button {
     margin-top: 5vh;
 }
 
 .button:hover {
     background-color: black;
+}
+
+.btn-dark {
+    border: 1px white solid !important;
+}
+
+h1 {
+    font-size: 6vh !important;
+    font-family: 'Luxurious_Roman-Regular';
+}
+
+h2 {
+    font-size: 5vh !important;
+    font-family: 'Luxurious_Roman-Regular';
+}
+
+h3 {
+    font-size: 3vh !important;
+    font-family: 'Luxurious_Roman-Regular';
+}
+
+p {
+    font-size: 2.5vh;
+    font-family: 'Merienda-Regular';
+}
+
+.paragraph {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: white 1px solid;
+    visibility: hidden;
+    position: absolute;
+}
+
+.collapse-button {
+    width: 100vw;
+}
+
+.accordion-item {
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+#origins-text {
+    visibility: visible;
+}
+
+.accordion {
+    width: 100vw;
+}
+
+.btn {
+    width: 100vw !important;
+}
+
+.navbtn{
+    width: 100vw !important;
+}
+
+@media (min-width: 768px) {
+    .accordion,
+    .btn {
+        width: 30vw !important;
+    }
+
+    .navbtn {
+        width: 50vw !important;
+    }
+}
+
+.accordion-button {
+    height: 5vh !important;
+}
+
+.h6 {
+    font-size: 1rem !important;
+    font-family: 'Merienda-Regular';
 }

@@ -150,20 +150,17 @@ function championOpponent(){
     }
 }
 
+
 function win() {
     up++
     userPoints.innerText = up;
     if (up == 3) {
         winLose.innerText = "Win!";
         winLoseContainer.style.opacity = 1;
-        if (difficulty == 'h') {
-            endChoice.style.display = "none";
-        } else {
-            endChoice.style.display = "flex";
-            endChoice.style.opacity = 1;
-            endChoiceButton.style.display = "none";
-            exitButton.style.display = "flex";
-        }
+        endChoice.style.display = "flex";
+        endChoice.style.opacity = 1;
+        endChoiceButton.style.display = "flex";
+        exitButton.style.display = "flex";
     }
 }
 
@@ -176,7 +173,7 @@ function lose() {
         endChoice.style.display = "flex";
         endChoice.style.opacity = 1;
         endChoiceButton.style.display = "flex";
-        exitButton.style.display = "none";
+        exitButton.style.display = "flex";
     }
 }
 
@@ -230,19 +227,18 @@ function decrement() {
     count();
 }
 
-function nextLevel(){
+function differentLevel(){
     up = 0;
     op = 0;
     opponentPoints.innerText = op;
     userPoints.innerText = up;
-    hide();
     rc = 1;
     roundCounter.innerText = rc;
     lastRound = null;
     previousChoice = null;
-    if (difficulty == 'e') {
-        timerFunction('m', 10);
-    } else if (difficulty == 'm') {
-        timerFunction('h', 5);
-    }
+    secondPart.style.display = 'none';
+    const title = document.getElementById("title");
+    const buttonSet = document.getElementById("buttonset");
+    title.style.display = "flex";
+    buttonSet.style.display = "flex";
 }

@@ -7,74 +7,133 @@
         <meta name="author" content="Daniel Ting">
         <title>Janken | History</title>
         <link rel="stylesheet" href="../CSS Files/history.css">
-        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     </head>
     <body>
-        <script type="module" src="../JavaScript Files/HistoryThree.js"></script>
-        <script src="../JavaScript Files/LoadSpace.js"></script>
+        <script type="module" src="../JavaScript Files/History Page/historyThree.js"></script>
+        <script src="../JavaScript Files/History Page/loadSpace.js"></script>
         <div id="loading-screen">
             <div id="title-name">History</div>
             <div class="mouse"></div>
-            <div id="mouse-text">Click on the tabs on the right to visit different time periods</div>
+            <div id="mouse-text">Click on the section tab to choose a time period</div>
         </div>
         <main>
-            <div id="menu" class="menuContainer" onclick="change(this)">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-            </div>
-            <div id="tab">
-                <button class="tabButton" onclick="loadSpace(event, 'origins'); backgroundChanger('origins');" id="defaultOpen">Ancient Origins</button>
-                <button class="tabButton" onclick="loadSpace(event, 'japan'); backgroundChanger('japan');">Arrival to Japan</button>
-                <button class="tabButton" onclick="loadSpace(event, 'world'); backgroundChanger('world');">Spreading Across the World</button>
-                <button class="tabButton" onclick="loadSpace(event, 'today'); backgroundChanger('today');">Interesting Uses Today</button>
-            </div>
-            <div id="origins" class="tabContent">
-                <h2 class="tabHeading">Ancient Origins</h2>
-                <p class="tabStuff">The first known mention of this game was from the Ming Dynasty book, Wuzazu, but the book stated that the game further dates back to the Han Dynasty, around 200 BC. The game was originally called Shoushiling, meaning “the three who are afraid of each other.” Although quite primeval, it had all of the rules that modern Janken has. The game was very popular among the peasantry since it required only their hands to play it. Eventually, it became popular enough to transcend nations.</p>
-            </div>
-
-            <div id="japan" class="tabContent">
-                <h2 class="tabHeading">Arrival to Japan</h2>
-                <p>In the 17th Century, this Chinese game was imported to Japan where it became its own genre of hand(ken) games called Sansukumi-Ken. The first Sansukumi-Ken game was called mushi-ken and it used the frog, slug, and snake hand signs instead of the modern rock, paper, and scissors. In mushi-ken the frog (thumb) beats the slug (pinky finger) which beats the snake (index finger) which, in turn, beats the frog. The most popular sansukumi-ken game in Japan was kitsune-ken. In this version, a supernatural fox called a kitsune defeats the village head, the village head defeats the hunter, and the hunter defeats the fox. And unlike mushi-ken, Kitsune-ken is played with both hands.</p>
-            </div>
-
-            <div id="world" class="tabContent">
-                <h2 class="tabHeading">Spreading Across the World</h2>
-                <p>In the turn of the 20th century, most sansukumi-ken games had died in obscurity except for Janken, which is currently recognized as the standard worldwide version. Japan's increasing influence and the spread of Japanese immigrants also increased the recognition of Janken. In the 1920s, many Western articles explained the rules of the game and even claimed that the game hailed from Europe. Eventually, it became so popular that it is now seen as an average occurance in daily life. It's not known as to why Janken succeeded in gaining popularity, but many speculate that it was because of the easy to use handsigns that a global audience could recognize.</p>
-            </div>
-
-            <div id="today" class="tabContent">
-                <h2 class="tabHeading">Interesting Uses Today</h2>
-                <p> Although it has origins dating back to China, the game is steeped in Japanese Culture. The game, although trivial in its original purpose, was used to settle many major debates. One famous story involved settling a Florida court case while another was to settle Takashi Hashiyama's painting auction. There are even Worldwide Rock Paper Scissors tournaments held by the World Rock Paper Scissors Association (WRPSA). Some say that the Comte de Rochambeau, the famous frenchman who fought alongside the American revolutionaries, played this game (which is why some call it Roshambo) but there is little evidence to support it. </p>
-            </div>
-            <div class="cont">
-                <div class="item">
-                    <div id="slide">
-                        <div class="arrow-container">
-                            <div class="arrow"></div>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                            aria-controls="collapseOne">
+                            <h3>Sections</h3>
+                        </button>
+                    </h2>
+                    <div class="accordion-collapse collapse btn-group-vertical position-relative" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <input type="radio" class="btn-check" name="section-buttons" id="origins" autocomplete="off" checked
+                            onclick="backgroundChanger(this.id); displayText('origins-text');" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                        <label class="btn btn-dark" for="origins">
+                            <h1>Ancient Origins</h1>
+                        </label>
+                    
+                        <input type="radio" class="btn-check" name="section-buttons" id="japan" autocomplete="off"
+                            onclick="backgroundChanger(this.id); displayText('japan-text');" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                        <label class="btn btn-dark" for="japan">
+                            <h1>Arrival to Japan</h1>
+                        </label>
+                    
+                        <input type="radio" class="btn-check" name="section-buttons" id="world" autocomplete="off"
+                            onclick="backgroundChanger(this.id); displayText('world-text');" data-bs-toggle="collapse" data-bs-target="#collapseTwo"> 
+                        <label class="btn btn-dark" for="world">
+                            <h1>Spreading Across the World</h1>
+                        </label>
+                    
+                        <input type="radio" class="btn-check" name="section-buttons" id="today" autocomplete="off"
+                            onclick="backgroundChanger(this.id); displayText('today-text');" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                        <label class="btn btn-dark" for="today">
+                            <h1>Interesting Uses Today</h1>
+                        </label>
+                    </div>
+                    
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button bg-dark text-white" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="true" aria-expanded="false" aria-controls="collapseTwo">
+                            <h3>Information</h3>
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="paragraph" id="origins-text">
+                            <h2>Ancient Origins</h2>
+                            <p>The first known mention of this game was from the Ming Dynasty book, Wuzazu, but the book stated that the game
+                                further
+                                dates back to the Han Dynasty, around 200 BC. The game was originally called Shoushiling, meaning “the three who
+                                are
+                                afraid of each other.” Although quite primeval, it had all of the rules that modern Janken has. The game was
+                                very
+                                popular among the peasantry since it required only their hands to play it. Eventually, it became popular enough
+                                to
+                                transcend nations.</p>
                         </div>
-                        <form action="../index.html">
-                            <input type="submit" value="Main Page" class="button" id="main-button" />
-                        </form>
-                        <form action="./history.html">
-                            <input type="submit" value="History" class="button" id="history-button" />
-                        </form>
-                        <form action="./rules.html">
-                            <input type="submit" value="Rules" class="button" id="rules-button" />
-                        </form>
-                        <form action="./game.html">
-                            <input type="submit" value="Game" class="button" id="game-button" />
-                        </form>
+                        <div class="paragraph" id="japan-text">
+                            <h2>Arrival to Japan</h2>
+                            <p>In the 17th Century, this Chinese game was imported to Japan where it became its own genre of hand(ken) games
+                                called Sansukumi-Ken. The first Sansukumi-Ken game was called mushi-ken and it used the frog, slug, and snake
+                                hand signs instead of the modern rock, paper, and scissors. In mushi-ken the frog (thumb) beats the slug (pinky
+                                finger) which beats the snake (index finger) which, in turn, beats the frog. The most popular sansukumi-ken game
+                                in Japan was kitsune-ken. In this version, a supernatural fox called a kitsune defeats the village head, the
+                                village head defeats the hunter, and the hunter defeats the fox. And unlike mushi-ken, Kitsune-ken is played
+                                with both hands.</p>
+                        </div>
+                        <div class="paragraph" id="world-text">
+                            <h2>Spreading Across the World</h2>
+                            <p>In the turn of the 20th century, most sansukumi-ken games had died in obscurity except for Janken, which is
+                                currently recognized as the standard worldwide version. Japan's increasing influence and the spread of Japanese
+                                immigrants also increased the recognition of Janken. In the 1920s, many Western articles explained the rules of
+                                the game and even claimed that the game hailed from Europe. Eventually, it became so popular that it is now seen
+                                as an average occurance in daily life. It's not known as to why Janken succeeded in gaining popularity, but many
+                                speculate that it was because of the easy to use handsigns that a global audience could recognize.</p>
+                        </div>
+                        <div class="paragraph" id="today-text">
+                            <h2>Interesting Uses Today</h2>
+                            <p> Although it has origins dating back to China, the game is steeped in Japanese Culture. The game, although
+                                trivial in its original purpose, was used to settle many major debates. One famous story involved settling a
+                                Florida court case while another was to settle Takashi Hashiyama's painting auction. There are even Worldwide
+                                Rock Paper Scissors tournaments held by the World Rock Paper Scissors Association (WRPSA). Some say that the
+                                Comte de Rochambeau, the famous frenchman who fought alongside the American revolutionaries, played this game
+                                (which is why some call it Roshambo) but there is little evidence to support it. </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+                    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link h6" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled h6" aria-disabled="true" href="./history.html">History</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link h6" href="./rules.html">Rules</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link h6" href="./game.html" tabindex="-1">Game</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         <script>
             document.getElementById("defaultOpen").click();
         </script>
-        
-        <script src="../JavaScript Files/history.js"></script>
         
         
     </body>

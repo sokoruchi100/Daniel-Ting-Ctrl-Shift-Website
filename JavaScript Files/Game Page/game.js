@@ -1,10 +1,6 @@
-import * as THREE from "./three.module.js";
-import {TextGeometry} from "./TextGeometry.js";
-import { FontLoader} from "./FontLoader.js";
-import WebGL from "./WebGL.js";
-import { CSS3DObject, CSS3DRenderer } from "./CSS3DRenderer.js"
-import {GLTFLoader} from "./GLTFLoader.js"
-import {OrbitControls} from "./OrbitControls.js"
+import * as THREE from "../Threejs Folder/three.module.js";
+import WebGL from "../Threejs Folder/WebGL.js";
+import {GLTFLoader} from "../Threejs Folder/GLTFLoader.js"
 
 //ELEMENTS
 const loadingScreen = document.getElementById('loading-screen');
@@ -65,7 +61,7 @@ manager.onLoad = function ( ) {
 //GLTF LOADER
 const gltfLoader = new GLTFLoader(manager);
 
-gltfLoader.load( "../Interior/scene.gltf", function ( gltf ) {
+gltfLoader.load( "../Models/Interior/scene.gltf", function ( gltf ) {
 
 	scene.add( gltf.scene );
     gltf.scene.position.set(0,0,0)

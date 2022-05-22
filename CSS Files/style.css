@@ -23,6 +23,7 @@ main {
     position: absolute;
     height: 100%;
     width: 100%;
+    display: none;
 }
 
 #historyButton, #rulesButton, #gameButton {
@@ -141,206 +142,18 @@ main {
     bottom: 20vh;
 }
 
-#opening-wrapper {
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    width: 200vh;
-    height: 120vh;
+#opening-alert {
+    visibility: hidden;
+    margin-bottom: 7vh;
 }
 
-#opening-text {
-    color: white;
-    background-color: rgba(0,0,0, 0.5);
-    font-size: 5vh;
-    padding: 2vh;
+.display-6 {
     font-family: 'Merienda-Regular';
-    width: 100vh;
-    height: 60vh;
-    border-radius: 8vh;
-    border: .25vh solid white;
-}
-
-#close-button {
-    display: flex;
-    position: absolute;
-    opacity: 0.5;
-    top: 30vh;
-    height: 6vh;
-    width: 6vh;
-    right: 51vh;
-    border: 0px;
-    background: rgba(51, 51, 51, 0);
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-}
-
-#close-button:hover {
     opacity: 1;
 }
 
-#close-button:before, #close-button:after {
-    position: absolute;
-    content: ' ';
-    height: 8vh;
-    width: .5vh;
-    background-color: rgb(255, 255, 255);
-}
-
-#close-button:before {
-    transform: rotate(45deg);
-}
-
-#close-button:after {
-    transform: rotate(-45deg);
-}
-
-#history-wrapper {
-    position: absolute;
-    align-content: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100vh;
-}
-
-#history-title {
-    font-size: 10vh;
+.display-1 {
     font-family: 'Luxurious_Roman-Regular';
-}
-
-.history {
-    background-color: rgba(0,0,0, 0.5);
-    color: white;
-    display: block;
-}
-
-#history-text {
-    font-size: 5vh;
-    font-family: 'Merienda-Regular';
-}
-
-#history-button {
-    height: 7vh;
-    width: 23vh;
-    font-size: 4vh;
-    background-color: rgba(0, 0, 0, 0);
-    border: .25vh solid black;
-    cursor: pointer;
-    transition: 0.5s;
-    font-family: 'Merienda-Regular';
-}
-
-#history-button:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-#rules-wrapper {
-    position: absolute;
-    align-content: center;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-direction: column;
-    width: 100%;
-}
-
-#rules-title {
-    font-size: 10vh;
-    font-family: 'Luxurious_Roman-Regular';
-}
-
-.rules {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-}
-
-#rules-text {
-    font-size: 5vh;
-    font-family: 'Merienda-Regular';
-}
-
-#rules-button {
-    height: 7vh;
-    width: 23vh;
-    font-size: 4vh;
-    background-color: rgba(0, 0, 0, 0);
-    border: .25vh solid black;
-    cursor: pointer;
-    transition: 0.5s;
-    font-family: 'Merienda-Regular';
-}
-
-#rules-button:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-#game-wrapper {
-    position: absolute;
-    align-content: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100vh;
-}
-
-#game-title {
-    font-size: 10vh;
-    font-family: 'Luxurious_Roman-Regular';
-}
-
-.game {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    display: block;
-}
-
-#game-text {
-    font-size: 5vh;
-    font-family: 'Merienda-Regular';
-}
-
-#game-button {
-    height: 7vh;
-    width: 23vh;
-    font-size: 4vh;
-    background-color: rgba(0, 0, 0, 0);
-    border: .25vh solid black;
-    cursor: pointer;
-    transition: 0.5s;
-    font-family: 'Merienda-Regular';
-}
-
-#game-button:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-#source-wrapper {
-    position: absolute;
-    align-content: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100vh;
-}
-
-#source-title {
-    font-size: 10vh;
-    font-family: 'Luxurious_Roman-Regular';
-}
-
-.source {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    display: block;
-}
-
-#source-text {
-    font-size: 2vh;
-    font-family: 'Merienda-Regular';
-}
-
-#source-me,
-#source-comp {
-    font-size: 4vh;
-    font-family: 'Merienda-Regular';
 }
 
 #mouse-text {
@@ -349,4 +162,20 @@ main {
 
 #title-name {
     font-family: 'Luxurious_Roman-Regular';
+}
+
+@media (max-width: 768px) {
+
+    .display-1 {
+        font-size: 5vh !important;
+    }
+        
+    .display-6 {
+        font-size: 2vh !important;
+    }
+}
+
+.h6 {
+    font-size: 1rem !important;
+    font-family: 'Merienda-Regular';
 }

@@ -24,65 +24,6 @@ main {
     display: none;
 }
 
-.cont {
-    z-index: -1;
-    position: fixed;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    height: 100.5vh;
-    /* the next two lines for just for helping to improve the demonstration */
-    background-color: rgba(255, 255, 255, 0);
-    width: 98%;
-    /*----------------------*/
-}
-
-.item {
-    position: relative;
-    background: rgba(0, 0, 0, 0);
-    height: 1vh;
-    width: 20vh;
-    transition: height 1s;
-    
-}
-
-.item:hover {
-    height: 45vh;
-}
-
-#slide {
-    position: absolute;
-    bottom: -40vh;
-    width: 20vh;
-    height: 45vh;
-    background: rgba(0, 0, 0, 0.5);
-    transition: 1s;
-    display: flex;
-    flex-direction: column;
-    border: 0.25vh solid white;
-    border-radius: 1vh;
-}
-
-.item:hover #slide {
-    transition: 1s;
-    bottom: 0;
-}
-
-.arrow-container {
-    display: flex;
-    justify-content: center;
-}
-
-.arrow {
-    width: 4vh;
-    height: 4vh;
-    transition: .5s;
-    box-shadow: -0.25vh 0.25vh 0 rgb(255, 255, 255);
-    transform: rotate(135deg);
-    position: absolute;
-    top: 2vh;
-}
-
 .button {
     background-color: inherit;
     color: white;
@@ -105,17 +46,16 @@ main {
 }
 
 #play-title {
-    position: absolute;
     display: flex;
-    width: 205vh;
-    height: 15vh;
-    align-items: center;
     justify-content: center;
-    align-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 15vh;
     color: rgb(240, 173, 173);
     font-size: 15vh;
     font-family: 'Luxurious_Roman-Regular';
 }
+
 
 #play-word {
     color: rgb(87, 212, 87);
@@ -127,17 +67,6 @@ main {
     color: red;
 }
 
-#play,
-#win {
-    position: fixed;
-    display: flex;
-    height: 50vh;
-    width: 90vh;
-    flex-direction: row;
-    flex-wrap: wrap;
-    left: 58vh;
-    top: 18vh;
-}
 
 #handsigns-container,
 #level-container,
@@ -150,11 +79,11 @@ main {
     display: flex;
     justify-content: center;
     height: 33vh;
-    width: 43vh;
+    width: 87vh;
     background-color: rgba(46, 27, 9, 0.75);
     flex-direction: column;
     border-radius: 2vh;
-    border: 0.25vh outset black;
+    border: 1px solid black;
     transition: 0.5s;
     cursor: pointer;
 }
@@ -167,7 +96,7 @@ main {
 #predictions-container:hover,
 #statistics-container:hover,
 #first-container:hover {
-    border: .5vh solid white;
+    border: 2px solid white;
     background-color: rgba(46, 27, 9, 1);
 }
 
@@ -183,16 +112,16 @@ main {
 }
 
 .title {
-    transition: 0.5s;
+    transition: 0.25s;
     margin: 0vh;
-    font-size: 3.5vh;
+    font-size: 4vh;
     font-family: 'Luxurious_Roman-Regular';
     align-self: center;
 }
 
 .text {
-    transition: 0.5s;
-    font-size: 1.5vh;
+    transition: 0.25s;
+    font-size: 1.25vh;
     font-family: 'Merienda-Regular';
 }
 
@@ -269,4 +198,16 @@ main {
     to {
         opacity: 0;
     }
+}
+
+#play,
+#win {
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+}
+
+.h6 {
+    font-size: 1rem !important;
+    font-family: 'Merienda-Regular';
 }

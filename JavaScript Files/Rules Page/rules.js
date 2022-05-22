@@ -1,8 +1,6 @@
-import * as THREE from "./three.module.js";
-import {TextGeometry} from "./TextGeometry.js";
-import { FontLoader} from "./FontLoader.js";
-import WebGL from "./WebGL.js";
-import {GLTFLoader} from "./GLTFLoader.js"
+import * as THREE from "../Threejs Folder/three.module.js";
+import WebGL from "../Threejs Folder/WebGL.js";
+import {GLTFLoader} from "../Threejs Folder/GLTFLoader.js"
 
 //VARIABLES
 const win = document.getElementById('win');
@@ -60,10 +58,10 @@ manager.onLoad = function ( ) {
 //IMPORTING MODELS
 const gltfLoader = new GLTFLoader(manager);
 
-gltfLoader.load( "../Notice Board/scene.gltf", function ( gltf ) {
+gltfLoader.load( "../Models/Notice Board/scene.gltf", function ( gltf ) {
 
 	scene.add( gltf.scene );
-    gltf.scene.position.set(0,0,0);
+    gltf.scene.position.set(-.25,0,0);
     gltf.scene.rotation.y = 3.14
     gltf.scene.scale.set(7,7,7);
     gltf.scene.traverse(n => {

@@ -11,7 +11,8 @@
 body {
     overflow: hidden;
     margin: 0;
-
+    width: 100vw;
+    height: 100vh;
 }
 
 main {
@@ -29,7 +30,7 @@ main {
 h1 {
     color: white;
     font-family: 'Merienda-Regular';
-    font-size: 8vh;
+    font-size: 8vh !important;
 }
 
 #buttonset {
@@ -44,7 +45,7 @@ h2 {
     align-items: center;
     justify-content: center;
     font-family: 'Merienda-Regular';
-    font-size: 5vh;
+    font-size: 5vh !important;
     text-align: center;
 }
 
@@ -225,9 +226,8 @@ h2 {
     display: flex;
 }
 
-#end-choice-button,
-#exit-button {
-    position: absolute;
+#end-choice-button {
+    position: relative;
     font-size: 6vh;
     background-color: rgba(0, 0, 0, 0.5);
     border: 1px solid white;
@@ -239,6 +239,25 @@ h2 {
     padding-right: 1vh;
     margin-top: 30vh;
     transition: 0.5s;
+    bottom: 25vh;
+    margin-right: 1vw;
+}
+
+#exit-button {
+    position: relative;
+    font-size: 6vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid white;
+    border-radius: 5vh;
+    cursor: pointer;
+    color: white;
+    font-family: 'Merienda-Regular';
+    padding-left: 1vh;
+    padding-right: 1vh;
+    margin-top: 30vh;
+    transition: 0.5s;
+    bottom: 25vh;
+    margin-left: 1vw;
 }
 
 #end-choice-button:hover,
@@ -274,7 +293,7 @@ h2 {
     border: 1px solid white;
     border-radius: 50%;
     height: 10vh;
-    width: 10vh;
+    width: 5vw;
     font-size: 8vh;
     font-family: 'Luxurious_Roman-Regular';
     display: flex;
@@ -282,8 +301,12 @@ h2 {
     align-items: center;
 }
 
-#push {
-    width: 25vh;
+#push1 {
+    width: 19vw;
+}
+
+#push2 {
+    width: 30vw;
 }
 
 .large-div {
@@ -324,6 +347,7 @@ h2 {
 
 #button-container {
     margin-top: 0vh;
+    bottom: 10vh;
 }
 
 #winlose-container {
@@ -345,86 +369,6 @@ h2 {
 
 #second-part {
     display: none;
-}
-
-.cont {
-    display: none;
-    z-index: 1;
-    position: fixed;
-    align-items: flex-end;
-    justify-content: flex-end;
-    height: 100.5vh;
-    /* the next two lines for just for helping to improve the demonstration */
-    background-color: rgba(255, 255, 255, 0);
-    right: 2%;
-    /*----------------------*/
-}
-
-.item {
-    position: relative;
-    background: rgba(0, 0, 0, 0);
-    height: 1vh;
-    width: 20vh;
-    transition: height 1s;
-
-}
-
-.item:hover {
-    height: 45vh;
-}
-
-#slide {
-    position: absolute;
-    bottom: -40vh;
-    width: 20vh;
-    height: 45vh;
-    background: rgba(0, 0, 0, 0.5);
-    transition: 1s;
-    display: flex;
-    flex-direction: column;
-    border: 0.25vh solid white;
-    border-radius: 1vh;
-}
-
-.item:hover #slide {
-    transition: 1s;
-    bottom: 0;
-}
-
-.arrow-container {
-    display: flex;
-    justify-content: center;
-}
-
-.arrow {
-    width: 4vh;
-    height: 4vh;
-    transition: .5s;
-    box-shadow: -0.25vh 0.25vh 0 rgb(255, 255, 255);
-    transform: rotate(135deg);
-    position: absolute;
-    top: 2vh;
-}
-
-.nav-button {
-    background-color: inherit;
-    color: white;
-    cursor: pointer;
-    height: 10vh;
-    width: 100%;
-    border: none;
-    transition: 0.5s;
-    font-size: 3vh;
-    font-family: 'Merienda-Regular';
-
-}
-
-#main-button {
-    margin-top: 5vh;
-}
-
-.nav-button:hover {
-    background-color: black;
 }
 
 #loading-screen {
@@ -487,4 +431,9 @@ h2 {
     to {
         opacity: 0;
     }
+}
+
+.h6 {
+    font-size: 1rem !important;
+    font-family: 'Merienda-Regular';
 }

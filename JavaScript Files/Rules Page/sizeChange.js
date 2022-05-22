@@ -32,15 +32,15 @@ function grow(element, parentElement) {
         
         element.style.width = "87vh";
         element.style.height = "66vh";
-        element.firstElementChild.style.fontSize = "7vh";
-        element.lastElementChild.style.fontSize = "3vh";
+        element.firstElementChild.style.fontSize = "8vh";
+        element.lastElementChild.style.fontSize = "2.5vh";
     } else if (small == false) {
         small = true;
         
-        element.style.width = "43vh";
+        element.style.width = "87vh";
         element.style.height = "33vh";
-        element.firstElementChild.style.fontSize = "3.5vh";
-        element.lastElementChild.style.fontSize = "1.5vh";
+        element.firstElementChild.style.fontSize = "4vh";
+        element.lastElementChild.style.fontSize = "1.25vh";
         if (parentElement == play) {
             for (let i = 0; i < playElement.length; i++) {
                 playElement[i].style.display = "flex";
